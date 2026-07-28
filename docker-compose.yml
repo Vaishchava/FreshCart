@@ -19,7 +19,7 @@ services:
     networks:
       - freshkart-network
     ports:
-      - "8080:80"  # Assuming Nginx inside the container runs on port 80
+      - "8080:80" 
     depends_on:
       - mongodb
 
