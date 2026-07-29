@@ -48,10 +48,16 @@ jobs:
 
           script: |
             set -e
+            cd /home/ubuntu/FreshCart
+            docker compose pull
 
-            docker pull ${{ vars.DOCKERHUB_USERNAME }}/client:latest
-            docker pull ${{ vars.DOCKERHUB_USERNAME }}/server:latest
             docker compose up -d
 
+            docker image prune -f
+
+            echo "Running containers:"
+            docker ps
+
+            echo "Deployment completed successfully."
 
       
