@@ -1,103 +1,161 @@
-# Online Grocery Shopping Platform
+# 🛒 FreshCart - DevOps Deployment & Automation
 
-A full-stack grocery shopping web application built using the 
-MERN Stack as part of my MCA final year project. The goal was 
-to build a complete e-commerce experience for grocery shopping 
-— from browsing products to placing orders — with a separate 
-admin panel to manage everything behind the scenes.
+This repository contains my **DevOps implementation** for the FreshCart e-commerce application. The original project has been forked, and my focus is on deploying and automating the application using modern DevOps practices.
 
----
+## 📌 About This Project
 
-## Why I Built This
+The goal of this project is to gain hands-on experience with real-world DevOps workflows by taking an existing application and implementing:
 
-Grocery shopping apps are something everyone uses in daily life. 
-I wanted to build something practical and relatable, while also 
-challenging myself to implement real e-commerce features like 
-cart management, checkout flow, and order tracking.
+* Docker containerization
+* Multi-container deployment with Docker Compose
+* AWS EC2 deployment
+* Infrastructure as Code (Terraform)
+* CI/CD using GitHub Actions
+* Production-style deployment automation
 
----
-
-## What It Can Do
-
-**If you are a Customer:**
-- Register and login to your account
-- Browse products by category
-- Add items to cart and manage quantities
-- Place orders with delivery address and payment method
-- View your order history and profile
-
-**If you are an Admin:**
-- Login to a dedicated admin panel
-- Add, update, and delete products and categories
-- Manage and track customer orders
-- View contact messages from users
+This project is part of my DevOps learning journey and portfolio.
 
 ---
 
-## Tech Stack
+## 🚀 DevOps Technologies
 
-- **Frontend:** React.js, React Router DOM, Axios
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB, Mongoose
-- **Authentication:** JWT, Bcrypt
-- **File Uploads:** Cloudinary, Multer
-- **Tools:** Vite, Git, Postman
+* Linux (Ubuntu)
+* Git & GitHub
+* Docker
+* Docker Compose
+* AWS EC2
+* Terraform
+* GitHub Actions
+* Docker Hub
 
 ---
 
-## How to Run This Locally
+## 📂 Project Structure
 
-**Clone the project**
-```bash
-git clone https://github.com/makadia-deep/Online-Grocery-Shopping.git
+```text
+FreshCart/
+├── client/
+│   ├── Dockerfile
+│   └── ...
+├── server/
+│   ├── Dockerfile
+│   └── ...
+├── docker-compose.yml
+├── terraform/
+│   └── ...
+└── .github/
+    └── workflows/
+        └── ci-cd.yml
 ```
 
-**Run the backend**
-```bash
-cd server
-npm install
-nodemon index.js
-```
+---
 
-**Run the frontend**
-```bash
-cd client
-npm install
-npm run dev
-```
+## ⚙️ Features Implemented
 
-**Set up your .env file in the server folder**
-
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-PORT=5000
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
+* Dockerized frontend
+* Dockerized backend
+* Multi-container setup using Docker Compose
+* Automated Docker image builds
+* Docker Hub image publishing
+* Automated deployment to AWS EC2
+* Infrastructure provisioning using Terraform
+* GitHub Actions CI/CD pipeline
 
 ---
 
-## What I Learned
+## 🔄 CI/CD Workflow
 
-- Building a complete e-commerce flow from cart to checkout
-- Integrating Cloudinary for image uploads
-- Managing authentication and protected routes in React
-- Structuring a REST API with multiple models and routes
+```text
+Developer
+    │
+git push
+    │
+    ▼
+GitHub Actions
+    │
+    ▼
+Build Docker Images
+    │
+    ▼
+Push Images to Docker Hub
+    │
+    ▼
+SSH into AWS EC2
+    │
+    ▼
+docker compose pull
+    │
+    ▼
+docker compose up -d
+```
 
 ---
 
-## Built By
+## 🛠️ Deployment
 
-This project was collaboratively developed by:
+The application is deployed on an AWS EC2 instance using Docker Compose.
 
-**Mihir Parekh**
-- GitHub: [github.com/Mihir-3](https://github.com/Mihir-3)
-- LinkedIn: [linkedin.com/in/parekh-mihir](https://linkedin.com/in/parekh-mihir)
+Deployment process:
 
-**Makadia Deep**
-- GitHub: [github.com/makadia-deep](https://github.com/makadia-deep)
-- LinkedIn: [linkedin.com/in/deep-makadia-dev](https://www.linkedin.com/in/deep-makadia-dev/)
+1. Push code to the `main` branch.
+2. GitHub Actions builds the Docker images.
+3. Images are pushed to Docker Hub.
+4. GitHub Actions connects to the EC2 instance over SSH.
+5. The server pulls the latest images.
+6. Docker Compose updates the running containers automatically.
 
-> We built this as part of our academic journey, aiming to 
-> create something that reflects real-world e-commerce 
-> development beyond what textbooks cover.
+---
+
+## 📚 Learning Objectives
+
+This project helped me understand:
+
+* Docker image creation
+* Multi-container applications
+* Docker networking
+* Docker Compose
+* AWS EC2 deployment
+* Infrastructure as Code with Terraform
+* CI/CD automation using GitHub Actions
+* Production deployment workflow
+
+---
+
+## 🔮 Future Improvements
+
+* Kubernetes deployment
+* Nginx reverse proxy
+* HTTPS with Let's Encrypt
+* Monitoring using Prometheus & Grafana
+* Blue-Green deployments
+* Image versioning
+* Automated rollback strategy
+
+---
+
+## 🙏 Credits
+
+The original FreshCart application was developed by:
+
+### Mihir Parekh
+
+* GitHub: https://github.com/Mihir-3
+* LinkedIn: https://www.linkedin.com/in/parekh-mihir
+
+### Makadia Deep
+
+* GitHub: https://github.com/makadia-deep
+* LinkedIn: https://www.linkedin.com/in/deep-makadia-dev
+
+This repository focuses on the **DevOps implementation, deployment, and automation** of the original application.
+
+---
+
+## 👨‍💻 DevOps Implementation
+
+**Vaishnav Chavan**
+
+* GitHub: https://github.com/Vaishchava
+* LinkedIn: https://www.linkedin.com/in/vaishnav-chavan-4a518a175
+
+I'm currently building hands-on DevOps projects covering Linux, Docker, AWS, Terraform, GitHub Actions, Kubernetes, and CI/CD as part of my journey toward becoming a DevOps Engineer.
