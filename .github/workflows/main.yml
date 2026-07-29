@@ -25,13 +25,13 @@ jobs:
       -
         name: Build
         run: |
-          docker build -t ${{ vars.DOCKERHUB_USERNAME }}/client:latest ./client
-          docker build -t ${{ vars.DOCKERHUB_USERNAME }}/server:latest ./server
+          docker build -t ${{ vars.DOCKERHUB_USERNAME }}/freshcart-client:latest ./client
+          docker build -t ${{ vars.DOCKERHUB_USERNAME }}/freshcart-server:latest ./server
 
       - name: Push Image
         run: |
-         docker push ${{ vars.DOCKERHUB_USERNAME }}/client:latest
-         docker push ${{ vars.DOCKERHUB_USERNAME }}/server:latest
+         docker push ${{ vars.DOCKERHUB_USERNAME }}/freshcart-client:latest
+         docker push ${{ vars.DOCKERHUB_USERNAME }}/freshcart-server:latest
 
   deploy:
     name: Deploy to AWS EC2
