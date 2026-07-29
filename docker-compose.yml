@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   server:
-    build: ./server
+    image: vaishchavandocker/freshcart-server:latest
     container_name: freshkart-server
     networks:
       - freshkart-network
@@ -14,16 +14,12 @@ services:
       - ./server/.env
 
   client:
-    build: ./client
+    image: vaishchavandocker/freshcart-client:latest
     container_name: freshkart-client
     networks:
       - freshkart-network
     ports:
-<<<<<<< HEAD
-      - "8080:80" 
-=======
-      - "8080:80"
->>>>>>> af3b85f (added docker compose prod file)
+      - "8080:80"  
     depends_on:
       - mongodb
 
